@@ -30,3 +30,13 @@ Route::middleware([
 
 Route::get('/',[admin::class,'index']); 
 Route::get('/redirect',[admin::class,'redirect']);
+
+Route::prefix('/blog')->group(function(){
+  
+    Route::post('/Custrome',[admin::class,'custrome'])->name('blog.Custrome'); 
+    Route::get('/Custerome_view',[admin::class,'custrome_view'])->name('blog.Custerome_view'); 
+   
+
+});
+
+
