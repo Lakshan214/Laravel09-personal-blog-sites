@@ -37,7 +37,22 @@ class admin extends Controller
 }
 
 public function custrome_view(){
+  
+  $response['task'] = $this->task->all(); 
+  return view('admin.custromer')->with( $response);
 
-  return view('custmoer');
+}
 
-}}
+ public function delete($task_id){
+
+    $task=$this->task->find($task_id);
+
+    $task->delete();
+
+    return redirect()->back();
+
+
+ }
+
+
+}

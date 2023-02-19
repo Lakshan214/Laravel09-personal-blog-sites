@@ -117,9 +117,7 @@
     <!-- Services End -->
 
 
-    <!-- Portfolio Start -->
-    @include('Portfolio')
-    <!-- Portfolio End -->
+    
 
 
     <!-- Testimonial Start -->
