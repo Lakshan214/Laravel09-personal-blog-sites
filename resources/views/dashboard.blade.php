@@ -17,7 +17,7 @@
 
        @include('admin.navbar')
        <br>
-       <img src="img\th.jpeg" class="img-fluid" alt="...">
+      
    
      
 

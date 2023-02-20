@@ -36,7 +36,12 @@ Route::prefix('/blog')->group(function(){
     Route::post('/Custrome',[admin::class,'custrome'])->name('blog.Custrome'); 
     Route::get('/Custerome_view',[admin::class,'custrome_view'])->name('blog.Custerome_view'); 
     Route::get('/{task_id}/delete',[admin::class,'delete'])->name('blog.delete'); 
-    
+    Route::get('/blogAdd',[admin::class,'blogAdd'])->name('blog.blogAdd'); 
+    Route::post('/save',[admin::class,'blogSavve'])->name('blog.save'); 
+    Route::get('/blogView',[admin::class,'blogView'])->name('blog.blogView'); 
+    Route::get('/{blog_id}/blogdelete',[admin::class,'blogdelete'])->name('blog.blogdelete');
+    Route::get('/blog',[admin::class,'blog'])->name('blog.blog');
+  
    
 
 });

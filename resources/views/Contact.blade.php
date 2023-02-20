@@ -8,22 +8,22 @@
             <div class="col-lg-8">
                 <div class="contact-form text-center">
                     <div id="success"></div>
-                    <form name="sentMessage" action="{{route('blog.Custrome')}}" novalidate="novalidate" method="POST">
+                    <form name="sentMessage" action="{{route('blog.Custrome')}}" novalidate="novalidate" method="POST" >
                         @csrf
                         <div class="form-row">
                             <div class="control-group col-sm-6">
-                                <input type="text" class="form-control p-4" name="name" placeholder="Your Name"
-                                    required="required" data-validation-required-message="Please enter your name" />
+                                <input type="text" class="form-control p-4" name="name"  id="name"placeholder="Your Name" required
+                                 data-validation-required-message="Please enter your name" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group col-sm-6">
-                                <input type="email" class="form-control p-4" name="email" placeholder="Your Email"
+                                <input type="email" class="form-control p-4" name="email" id="email" placeholder="Your Email"required
                                     required="required" data-validation-required-message="Please enter your email" />
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="control-group">
-                            <input type="text" class="form-control p-4" name="subject" placeholder="Subject"
+                            <input type="text" class="form-control p-4" name="subject"  id="subject" placeholder="Subject"required
                                 required="required" data-validation-required-message="Please enter a subject" />
                             <p class="help-block text-danger"></p>
                         </div>

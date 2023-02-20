@@ -24,6 +24,16 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <script>
+        function validateForm() {
+          let x = document.forms["myForm"]["fname"].value;
+          if (x == "") {
+            alert("Name must be filled out");
+            return false;
+          }
+        }
+        </script>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
@@ -41,15 +51,15 @@
                 <a href="#qualification" class="nav-item nav-link">Quality</a>
                 <a href="#skill" class="nav-item nav-link">Skill</a>
                 <a href="#service" class="nav-item nav-link">Service</a>
-                <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
-                <a href="#testimonial" class="nav-item nav-link">Review</a>
+                {{-- <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
+                <a href="#testimonial" class="nav-item nav-link">Review</a> --}}
                 <a href="#blog" class="nav-item nav-link">Blog</a>
                 <a href="#contact" class="nav-item nav-link">Contact</a>
                 <a href="{{ route('login') }}" class="nav-item nav-link">Login</a>
               
          
             </div>
-            <a href="" class="btn btn-outline-primary d-none d-lg-block">Hire Me</a>
+            <a href="#contact" class="btn btn-outline-primary d-none d-lg-block">Hire Me</a>
         </div>
     </nav>
     <!-- Navbar End -->
@@ -121,7 +131,7 @@
 
 
     <!-- Testimonial Start -->
-    @include('Testimonial')
+    {{-- @include('Testimonial') --}}
     <!-- Testimonial End -->
 
 
