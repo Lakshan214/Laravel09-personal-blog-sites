@@ -34,10 +34,9 @@ class admin extends Controller
         return view('welcome');
     }
 
-   public function custrome(Request $request){
 
-   
- 
+
+   public function custrome(Request $request){
     $this->task-> create($request->all());
     return redirect()->back();
 }
@@ -59,14 +58,18 @@ public function custrome_view(){
 
  }
 
+
+
+
  public function blogAdd(){
 
     return view('admin.blogadd');
  }
 
- public function blogSavve(Request $request){
-   
 
+
+ public function blogSavve(Request $request){
+  
     $blog=new blog();
   $blog->subject=$request->subject;
   $blog->msg=$request->msg;
@@ -102,6 +105,38 @@ public function blogdelete($blog_id){
 public function blog(){
   $response['blog'] = $this->blog->all();
   return view('admin.blog')->with( $response);
+}
+
+public function edite($blog_id){
+  $blog=blog::find($blog_id);
+  return view('admin.edite',compact('blog'));
+}
+
+public function update(Request $request,$id){
+  
+  $blog=blog::find($id);
+  $blog->subject=$request->subject;
+  $blog->msg=$request->msg;
+ 
+
+  // $blog=$request->img;
+  
+
+  // $imagename=$request->img;
+
+ 
+  // if($imagename)
+  // {
+  //   $imagename=time().'.'.$request->img->extension();
+  //   $request->img->move('img',$imagename);  
+  //   $blog->img=$imagename;
+ 
+  // }
+  
+  $blog->save();
+ 
+
+  return redirect()->back();
 }
 
 }

@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   </head>
   <body  class="p-3 mb-2 bg-dark-subtle text-emphasis-dark">
     <br>
@@ -39,13 +41,14 @@
         <td><img class="img-fluid rounded w-25" src="/img/{{$blog->img}}"></td>
         <td>{{$blog->subject}}</td>
         <td>{{$blog->msg}}</td>
-        <td><a href="{{route('blog.blogdelete',$blog->id)}}" class="btn btn-danger">Delete</a>  </td>
-        <td><a href="" class="btn btn-success">Edite</a></td>
+        <td><a href="{{route('blog.blogdelete',$blog->id)}}" class="btn btn-danger"><i class="las la-trash"></a>  </td>
+        <td><a target="blank" href="{{route('blog.edite',$blog->id)}}" class="btn btn-success"><i class="las la-edit"></i></a></td>
       </tr>
 
       @endforeach
 
-    </tbody>
+    </tbody> 
+   
   </table>
 
 

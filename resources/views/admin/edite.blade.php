@@ -1,3 +1,4 @@
+
 {{-- <x-app-layout>
 </x-app-layout> --}}
 <!doctype html>
@@ -11,13 +12,13 @@
   <body  class="p-3 mb-2 bg-dark-subtle text-emphasis-dark">
     <br>
     <div class="text-light-emphasis">
-   <h2 class="text-center" >BLOG ADMIN PANAL</h2>
+   <h2 class="text-center" >EDITE BLOG </h2>
     </div>
     
    
    <!---   navbar -->
 
-   @include('admin.navbar')
+  
    
 
    <div class="container-fluid py-5" id="contact">
@@ -29,33 +30,34 @@
             <div class="col-lg-8">
                 <div class="contact-form text-center">
                     <div id="success"></div>
-                    <form name="sentMessage" action="{{route('blog.save')}}" novalidate="novalidate" method="POST"enctype="multipart/form-data">
+                    <form name="sentMessage" action="{{route('blog.update',$blog->id)}}" novalidate="novalidate" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-row">
                             <div class="control-group col-sm-6">
-                                <input type="file" class="form-control p-4" name="img"  id="img" placeholder="Add img "
-                                    required="required" data-validation-required-message="Please enter your name" />
+                                <input type="file" class="form-control p-4" placeholder="Add img"
+                                    required="required" data-validation-required-message="Please enter your name" /><br>
+                                    <img style="margin:auto;" height="100"width="100" src="/img/{{$blog->img}}">
                                 <p class="help-block text-danger"></p>
                             </div>
                            
                         </div>
                         <div class="control-group">
-                            <input type="text" class="form-control p-4" name="subject" id="subject" placeholder="Subject"
+                            <input type="text" class="form-control p-4"  value="{{$blog->subject}}"  name="subject" id="subject" placeholder="Subject"
                                 required="required" data-validation-required-message="Please enter a subject" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <textarea class="form-control py-3 px-4" rows="15" name="msg"  id="msg" placeholder="Message"
+                            <textarea class="form-control py-3 px-4" rows="15" name="msg" value="{{$blog->msg}}" id="msg" placeholder="{{$blog->msg}}"
                                 required="required"
-                                data-validation-required-message="Please enter your message"></textarea>
+                                data-validation-required-message="Please enter your message">{{$blog->msg}}</textarea>
                             <p class="help-block text-danger"></p>
                         </div>
                         <div>
-                            <button class="btn btn-outline-primary" type="submit" > publish blog </button>
+                            <button class="btn btn-outline-primary" type="submit" > publish Blog </button>
                         </div>
                     </form>
                 </div>
-            </div> 
+            </div>
         </div>
     </div>
 </div>

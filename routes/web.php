@@ -41,9 +41,11 @@ Route::prefix('/blog')->group(function(){
     Route::get('/blogView',[admin::class,'blogView'])->name('blog.blogView'); 
     Route::get('/{blog_id}/blogdelete',[admin::class,'blogdelete'])->name('blog.blogdelete');
     Route::get('/blog',[admin::class,'blog'])->name('blog.blog');
+    Route::get('/{blog_id}/edite',[admin::class,'edite'])->name('blog.edite');
+    Route::post('/{id}/update',[admin::class,'update'])->name('blog.update');
   
    
-
+    
 });
 
 
