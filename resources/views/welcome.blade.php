@@ -97,7 +97,7 @@
                     <h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>
                     <div class="typed-text d-none">Web Designer, Web Developer, Front End Developer, Apps Designer, Apps Developer</div>
                     <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
-                        <a href="" class="btn btn-outline-light mr-5">Download CV</a>
+                        <a href="{{route('blog.printpdf')}}" class="btn btn-outline-light mr-5">Download CV</a>
                         
                     </div>
                 </div>

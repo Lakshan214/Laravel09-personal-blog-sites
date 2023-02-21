@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\custeomer;
 use App\Models\blog;
+use App\Models\cv;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use PDF;
 
 class admin extends Controller
 
@@ -20,7 +23,10 @@ class admin extends Controller
     }
  
 
+  //  public function dminindex(){
 
+  //   return View('admin.index');
+  //  }
 
 
     public function index(){
@@ -74,15 +80,13 @@ public function custrome_view(){
   $blog->subject=$request->subject;
   $blog->msg=$request->msg;
  
-
   $imagename=$request->img;
   $imagename=time().'.'.$request->img->extension();
   $request->img->move('img',$imagename);  
   $blog->img=$imagename;
-
   $blog->save();
    
-    return redirect()->back();
+   return redirect()->back();
 
  } 
 
@@ -95,7 +99,6 @@ public function custrome_view(){
 public function blogdelete($blog_id){
 
   $blog=$this->blog->find($blog_id);
-
   $blog->delete();
 
   return redirect()->back();
@@ -125,17 +128,49 @@ public function update(Request $request,$id){
   // $imagename=$request->img;
 
  
-  // if($imagename)
+  //  if($imagename)
   // {
   //   $imagename=time().'.'.$request->img->extension();
   //   $request->img->move('img',$imagename);  
   //   $blog->img=$imagename;
  
-  // }
   
+  // }
   $blog->save();
- 
+  return redirect()->back();
+}
 
+
+public function printpdf(){
+  $cv=cv::all();
+  $pdf_file = PDF::class::loadView('admin.pdf',compact('cv'));
+  
+  return $pdf_file->download('CV.pdf');
+
+}
+
+public function cv(){
+  $cv=cv::all();
+  return view('admin.cv',compact('cv'));
+}
+
+public function SaveCV(Request $request){
+  
+  $blog=new cv();
+  $imagename=$request->img;
+  $imagename=time().'.'.$request->img->extension();
+  $request->img->move('img',$imagename);  
+  $blog->img=$imagename;
+  $blog->save();
+   
+   return redirect()->back();
+
+}
+
+public function CVdelete(Request $request, $id){
+  $cv=cv::Find($id);
+  $cv->img=$request->img;
+  $cv->delete();
   return redirect()->back();
 }
 

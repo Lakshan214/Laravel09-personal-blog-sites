@@ -23,11 +23,19 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
+            <a class="nav-link active" href="{{route('blog.cv')}}">Change cv</a>
           </li>
         </ul>
        
             <a class="nav-link active" href="{{url('/')}}">Logout</a>
+            {{-- <form method="POST" action="{{ route('logout') }}" x-data>
+              @csrf
+
+              <x-jet-responsive-nav-link href="{{ route('logout') }}"
+                             @click.prevent="$root.submit();">
+                  {{ __('Log Out') }}
+              </x-jet-responsive-nav-link>
+          </form> --}}
           
 
        

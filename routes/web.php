@@ -29,6 +29,7 @@ Route::middleware([
 });
 
 Route::get('/',[admin::class,'index']); 
+
 Route::get('/redirect',[admin::class,'redirect']);
 
 Route::prefix('/blog')->group(function(){
@@ -43,7 +44,10 @@ Route::prefix('/blog')->group(function(){
     Route::get('/blog',[admin::class,'blog'])->name('blog.blog');
     Route::get('/{blog_id}/edite',[admin::class,'edite'])->name('blog.edite');
     Route::post('/{id}/update',[admin::class,'update'])->name('blog.update');
-  
+    Route::get('/printpdf',[admin::class,'printpdf'])->name('blog.printpdf');
+    Route::get('/cv',[admin::class,'cv'])->name('blog.cv');
+    Route::post('/SaveCV',[admin::class,'SaveCV'])->name('blog.SaveCV');
+    Route::get('/{id}/CVdelete',[admin::class,'CVdelete'])->name('blog.CVdelete');
    
     
 });
