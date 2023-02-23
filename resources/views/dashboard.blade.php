@@ -16,7 +16,7 @@
        <!---   navbar -->
 
        @include('admin.navbar')
-       <br>
+       <img src="img/th.jpeg" width="100%" height="100%">
       
    
      

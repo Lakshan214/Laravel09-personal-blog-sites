@@ -16,7 +16,12 @@
    <h2 class="text-center" >BLOG ADMIN PANAL</h2>
     </div>
     
-   
+    @if (session()->has('message'))
+   <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Deleted Blog!!</strong> You should check in on some of those fields below.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  @endif 
    <!---   navbar -->
 
    @include('admin.navbar')

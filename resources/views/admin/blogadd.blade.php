@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   </head>
   <body  class="p-3 mb-2 bg-dark-subtle text-emphasis-dark">
+    @include('sweetalert::alert')
     <br>
     <div class="text-light-emphasis">
    <h2 class="text-center" >BLOG ADMIN PANAL</h2>

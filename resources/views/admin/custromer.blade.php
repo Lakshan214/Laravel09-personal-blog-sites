@@ -16,7 +16,12 @@
     
    
    <!---   navbar -->
-
+   @if (session()->has('message'))
+   <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Deleted Custromer!</strong> You should check in on some of those fields below.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  @endif 
    @include('admin.navbar')
    <br>
    @include('admin.table')

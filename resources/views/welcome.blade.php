@@ -37,6 +37,8 @@
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
+
+    @include('sweetalert::alert')
     <!-- Navbar Start -->
     <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
         <a href="index.html" class="navbar-brand ml-lg-3">

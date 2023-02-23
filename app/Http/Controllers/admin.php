@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\custeomer;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\blog;
 use App\Models\cv;
+use Illuminate\Console\View\Components\Alert as ComponentsAlert;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use PDF;
@@ -30,6 +32,8 @@ class admin extends Controller
 
 
     public function index(){
+        
+        
         $response['blog'] = $this->blog->all();
         return view('welcome')->with( $response);
     }
@@ -44,7 +48,9 @@ class admin extends Controller
 
    public function custrome(Request $request){
     $this->task-> create($request->all());
+    Alert::class::success('Msage Send!!!','We will contact you soon, Thank you ');
     return redirect()->back();
+   
 }
 
 public function custrome_view(){
@@ -60,7 +66,7 @@ public function custrome_view(){
 
     $task->delete();
 
-    return redirect()->back();
+    return redirect()->back()->with ('message',' Added Sucessfully!!');
 
  }
 
@@ -85,7 +91,7 @@ public function custrome_view(){
   $request->img->move('img',$imagename);  
   $blog->img=$imagename;
   $blog->save();
-   
+  Alert::class::success(' Your Blog is  publish');
    return redirect()->back();
 
  } 
@@ -101,7 +107,7 @@ public function blogdelete($blog_id){
   $blog=$this->blog->find($blog_id);
   $blog->delete();
 
-  return redirect()->back();
+  return redirect()->back()->with ('message',' Added Sucessfully!!');
 
 }
 
@@ -136,7 +142,9 @@ public function update(Request $request,$id){
  
   
   // }
+ 
   $blog->save();
+  Alert::class::success(' Your Blog is  Update');
   return redirect()->back();
 }
 
